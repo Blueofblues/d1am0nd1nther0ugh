@@ -78,17 +78,15 @@ main.about {
   margin: 0 auto;
   padding: 0 1rem 80px;
   font-family: 'Inter', sans-serif;
-  font-size: 1.3rem;
-  line-height: 2.2;
+  font-size: 1.25rem;
+  line-height: 1.8;
   color: #222;
-  text-align: justify;
+  text-align: left;   /* FIXED */
+  font-weight: 450;   /* CLEANER, STRONGER */
 }
 
-.about-text h1 {
-  font-size: 2.2rem;
-  font-weight: 500;
-  margin-bottom: 1.5rem;
-  letter-spacing: 0.8px;
+.about-text p {
+  margin-bottom: 24px;  /* TIGHTER, CLEANER */
 }
 
 /* Headings */
