@@ -81,6 +81,7 @@ main.about {
   font-size: 1.3rem;
   line-height: 2.2;
   color: #222;
+  text-align: left;   /* FIXED */
 }
 
 .about-text h1 {
