@@ -50,42 +50,33 @@ main.home {
   color: #222;
 }
 
-/* About Page Layout — NEW scroll-over-photo version */
-.about-hero {
-  min-height: 100vh;
-  background-image: url('assets/jasonbw.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 60px 20px;
-}
-
-.about-overlay {
-  max-width: 650px;
-  background: rgba(255, 255, 255, 0.60);
-  padding: 30px 35px;
-  border-radius: 10px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
-}
-
-/* About Page Text */
-.about-text {
-  max-width: 700px;
+/* Clean About Page (David Whyte style) */
+.about-clean {
+  max-width: 900px;
   margin: 0 auto;
-  padding: 0 1rem 80px;
-  font-family: 'Inter', sans-serif;
+  padding: 120px 40px;
+  text-align: center;
+}
+
+.about-photo {
+  width: 260px;
+  height: auto;
+  border-radius: 6px;
+  margin: 40px auto;
+  display: block;
+}
+
+.about-text {
   font-size: 1.25rem;
   line-height: 1.8;
   color: #222;
-  text-align: left;   /* FIXED */
-  font-weight: 450;   /* CLEANER, STRONGER */
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .about-text p {
-  margin-bottom: 24px;  /* TIGHTER, CLEANER */
+  margin-bottom: 24px;
 }
 
 /* Headings */
