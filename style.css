@@ -50,26 +50,25 @@ main.home {
   color: #222;
 }
 
-/* About Page Layout */
-main.about {
-  max-width: 960px;
-  margin: 0 auto;
-  padding: 100px 40px;
+/* About Page Layout — NEW scroll-over-photo version */
+.about-hero {
+  min-height: 100vh;
+  background-image: url('assets/jasonbw.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
 }
 
-/* About Page Image */
-.about-portrait {
-  width: 100%;
-  max-width: 480px;   /* matches diamond */
-  margin: 60px auto 30px;
-  display: block;
-  border-radius: 6px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
-}
-
-.about-portrait:hover {
-  transform: scale(1.02);
+.about-overlay {
+  max-width: 800px;
+  background: rgba(255, 255, 255, 0.85);
+  padding: 40px 50px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
 }
 
 /* About Page Text */
