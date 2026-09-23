@@ -59,8 +59,8 @@ main.about {
 
 /* About Page Image */
 .about-portrait {
-  width: 300px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 480px;   /* matches diamond */
   margin: 60px auto 30px;
   display: block;
   border-radius: 6px;
