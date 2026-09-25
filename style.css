@@ -67,12 +67,14 @@ nav a {
 }
 
 .anchor {
-  font-size: 1.9rem;
-  font-weight: 500;
-  margin-top: 60px;
-  max-width: 600px;
-  margin-left: auto; /* shifts it right for asymmetry */
+  font-size: 26px;
+  font-weight: 600;
   line-height: 1.35;
+  margin-top: 60px;
+  margin-bottom: 40px;
+  max-width: 600px;
+  margin-left: auto;
+  letter-spacing: 0.1px;
 }
 
 .reveal {
@@ -84,19 +86,6 @@ nav a {
 .reveal.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* Anchor Line */
-.anchor {
-  font-size: 26px;
-  font-weight: 500;
-  margin-bottom: 40px;
-}
-
-/* Beats */
-.beat {
-  font-size: 22px;
-  font-weight: 400;
 }
 
 /* Clarifier */
