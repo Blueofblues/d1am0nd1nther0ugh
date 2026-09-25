@@ -6,6 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   reveals.forEach((el, index) => {
     setTimeout(() => {
       el.classList.add("visible");
-    }, 800 * index); // stagger each reveal
+    }, 1200 * index); // stagger each reveal
   });
 });
