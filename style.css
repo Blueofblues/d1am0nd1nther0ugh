@@ -1,112 +1,86 @@
-/* Base styles */
+/* Basic Reset */
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
+  padding: 0;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #ffffff;
   color: #111;
-  text-align: center;
 }
 
 /* Navigation */
+nav {
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
 nav ul {
   list-style: none;
   padding: 0;
-  margin: 20px 0;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+}
+
+nav ul li {
+  display: inline-block;
+  margin: 0 20px;
 }
 
 nav a {
   text-decoration: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.2s ease;
+  color: #111;
+  font-size: 16px;
+  letter-spacing: 0.5px;
 }
 
-nav a:hover {
-  color: teal;
-}
-
-/* Homepage Layout */
-main.home {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 120px 40px;
-}
-
-/* Homepage Logo */
-.logo-container img {
-  max-width: 480px;
-  margin-top: 100px;
-}
-
-/* Homepage Tagline */
-.tagline {
-  font-size: 2.2rem;
-  margin-top: 60px;
-  letter-spacing: 1.6px;
-  line-height: 2.6;
-  color: #222;
-}
-
-/* Clean About Page (David Whyte style) */
-.about-clean {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 120px 40px;
+/* Hero Section */
+.hero {
   text-align: center;
+  margin-top: 120px;
 }
 
-.about-photo {
-  width: 260px;
-  height: auto;
-  border-radius: 6px;
-  margin: 40px auto;
-  display: block;
-}
-
-.about-text {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: #222;
-  max-width: 700px;
-  margin: 0 auto;
-  text-align: left;
-}
-
-.about-text p {
-  margin-bottom: 24px;
-}
-
-/* Headings */
-h1, h2 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin-bottom: 20px;
-}
-
-.about-name {
-  font-size: 3rem;
-  font-weight: 600;   /* overrides the thin global rule */
-  letter-spacing: 1.2px;
-  margin-top: 20px;
+.diamond {
+  width: 180px;
   margin-bottom: 40px;
-  text-align: center;
 }
 
-/* Paragraphs */
-p {
-  font-size: 1.2rem;
-  line-height: 1.8;
-  max-width: 700px;
-  margin: 0 auto 40px;
+/* Reveal Animation */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s ease, transform 0.9s ease;
+  margin: 25px 0;
+  font-size: 22px;
+  line-height: 1.4;
 }
 
-/* Footer (optional) */
-footer {
-  margin-top: 60px;
-  padding: 20px;
-  font-size: 0.9rem;
-  color: #666;
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Anchor Line */
+.anchor {
+  font-size: 26px;
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+/* Beats */
+.beat {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Clarifier */
+.clarifier {
+  font-size: 18px;
+  margin-top: 50px;
+  color: #444;
+}
+
+/* Transition Line */
+.transition {
+  font-size: 20px;
+  margin-top: 80px;
+  font-weight: 500;
+  opacity: 0.8;
 }
