@@ -33,25 +33,50 @@ nav a {
 
 /* Hero Section */
 .hero {
-  text-align: center;
-  margin-top: 120px;
-  margin-bottom: 400px;   /* <-- THIS is the fix */
+  width: 100%;
+  max-width: 900px;
+  margin: 120px auto;
+  padding: 0 20px;
+  text-align: left;
 }
 
 .diamond {
-  width: 300px;
-  max-width: 400px;
-  margin-bottom: 40px;
+  display: block;
+  margin: 0 auto 60px auto;
+  width: 140px;
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
-/* Reveal Animation */
+.diamond.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.beats {
+  margin-left: 0;
+}
+
+.beat {
+  font-size: 1.4rem;
+  margin-bottom: 22px;
+  letter-spacing: 0.5px;
+}
+
+.anchor {
+  font-size: 1.9rem;
+  font-weight: 500;
+  margin-top: 60px;
+  max-width: 600px;
+  margin-left: auto; /* shifts it right for asymmetry */
+  line-height: 1.35;
+}
+
 .reveal {
   opacity: 0;
   transform: translateY(20px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
-  margin: 25px 0;
-  font-size: 22px;
-  line-height: 1.4;
+  transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .reveal.visible {
