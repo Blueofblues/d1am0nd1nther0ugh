@@ -1,3 +1,4 @@
+console.log("scripts.js is running");
 document.addEventListener("DOMContentLoaded", () => {
   const reveals = document.querySelectorAll('.reveal');
 
