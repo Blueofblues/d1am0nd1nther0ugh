@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>D1am0nd1ntheR0ugh</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diamond in the Rough</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
 
-  <!-- Navigation (no logo on homepage) -->
-  <nav class="site-nav">
+<body>
+
+  <!-- Navigation -->
+  <nav>
     <ul>
       <li><a href="about.html">About</a></li>
       <li><a href="portfolio.html">Portfolio</a></li>
@@ -19,15 +19,27 @@
     </ul>
   </nav>
 
-  <!-- Homepage Content -->
-  <main class="home">
-    <div class="logo-container">
-      <img src="assets/diamond-sketch.jpg" alt="Diamond Sketch" />
-    </div>
-    <div class="tagline">
-     Strength is the Foundation. Clarity is the craft. Detail is the result.
-    </div>
-  </main>
+  <!-- Diamond Section -->
+  <section class="hero">
+    <img src="diamond.png" alt="Diamond Sketch" class="diamond">
 
+    <div class="reveal anchor">
+      Every problem starts rough. My job is to make it clear.
+    </div>
+
+    <div class="reveal beat">Strength is the foundation.</div>
+    <div class="reveal beat">Clarity is the craft.</div>
+    <div class="reveal beat">Detail is the result.</div>
+
+    <div class="reveal clarifier">
+      The diamond isn’t me. The diamond is the problem after I refine it.
+    </div>
+
+    <div class="reveal transition">
+      Here’s how I work.
+    </div>
+  </section>
+
+  <script src="script.js"></script>
 </body>
 </html>
