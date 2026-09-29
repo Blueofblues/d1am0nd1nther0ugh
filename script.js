@@ -10,22 +10,24 @@ document.addEventListener("DOMContentLoaded", () => {
     diamond.classList.add("visible");
   }, 300);
 
-  // Step 2: Each beat reveals → then drifts upward
+  // Step 2: Reveal beats one-by-one
   beats.forEach((beat, index) => {
-    // Reveal
     setTimeout(() => {
       beat.classList.add("visible");
 
-      // Drift upward through the diamond
+      // After reveal → drift upward into crown
       setTimeout(() => {
-        beat.classList.add("drift");
-      }, 1400); // <-- Correct drift timing
+        beat.classList.add(`drift${index + 1}`);
+      }, 1400);
 
-    }, 1200 + index * 900); 
+    }, 1200 + index * 900);
   });
 
-  // Step 3: Anchor appears last
+  // Step 3: Anchor appears AFTER crown is fully formed
+  const totalRevealTime = 1200 + beats.length * 900;
+  const crownFinishTime = totalRevealTime + 1400 + 2800; // drift3 duration
+
   setTimeout(() => {
     anchor.classList.add("visible");
-  }, 1200 + beats.length * 900 + 600);
+  }, crownFinishTime);
 });
