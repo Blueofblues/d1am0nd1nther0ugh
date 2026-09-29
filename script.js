@@ -2,19 +2,30 @@ console.log("script.js is running");
 
 document.addEventListener("DOMContentLoaded", () => {
   const diamond = document.querySelector(".diamond");
-  const reveals = document.querySelectorAll(".reveal");
+  const beats = document.querySelectorAll(".beat");
+  const anchor = document.querySelector(".anchor");
 
-  // Diamond fade-in first
+  // Step 1: Diamond fade-in
   setTimeout(() => {
     diamond.classList.add("visible");
   }, 300);
 
-  // Text stagger
-  reveals.forEach((el, index) => {
+  // Step 2: Each beat reveals → then drifts upward
+  beats.forEach((beat, index) => {
+    // Reveal
     setTimeout(() => {
-      el.classList.add("visible");
-    }, 1500 * index + 1200); 
-    // 1200ms pause after diamond
-    // 1500ms spacing between each line
+      beat.classList.add("visible");
+
+      // Drift upward through the diamond
+      setTimeout(() => {
+        beat.classList.add("drift");
+      }, 900);
+
+    }, 1200 + index * 900); 
   });
+
+  // Step 3: Anchor appears last
+  setTimeout(() => {
+    anchor.classList.add("visible");
+  }, 1200 + beats.length * 900 + 600);
 });
