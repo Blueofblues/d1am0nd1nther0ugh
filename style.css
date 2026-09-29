@@ -59,7 +59,7 @@ nav a {
 .diamond {
   display: block;
   width: 260px;
-  margin: 0 auto 20px auto;
+  margin: 20px auto 20px auto;
 
   opacity: 0;
   transform: scale(0.94);
@@ -98,12 +98,12 @@ nav a {
 /* Drift keyframes — crown formation */
 @keyframes driftUp1 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-350px); }
+  to   { transform: translateY(-345px); }
 }
 
 @keyframes driftUp2 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-345px); }
+  to   { transform: translateY(-342px); }
 }
 
 @keyframes driftUp3 {
