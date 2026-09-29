@@ -7,8 +7,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Step 1: Diamond fade-in
   setTimeout(() => {
-    beat.classList.add("drift");
-  }, 1400);
+    diamond.classList.add("visible");
+  }, 300);
 
   // Step 2: Each beat reveals → then drifts upward
   beats.forEach((beat, index) => {
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       // Drift upward through the diamond
       setTimeout(() => {
         beat.classList.add("drift");
-      }, 900);
+      }, 1400); // <-- Correct drift timing
 
     }, 1200 + index * 900); 
   });
