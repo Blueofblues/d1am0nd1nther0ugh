@@ -95,20 +95,20 @@ nav a {
   transform: translateY(0);
 }
 
-/* Drift keyframes */
+/* Drift keyframes — crown formation */
 @keyframes driftUp1 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-140px); }
+  to   { transform: translateY(-160px); }
 }
 
 @keyframes driftUp2 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-180px); }
+  to   { transform: translateY(-200px); }
 }
 
 @keyframes driftUp3 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-220px); }
+  to   { transform: translateY(-240px); }
 }
 
 /* Crown formation */
