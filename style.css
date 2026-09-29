@@ -86,13 +86,13 @@ nav a {
 /* Reveal phase */
 .reveal {
   opacity: 0;
-  transform: translateY(25px);
+  transform: translateY(45px);
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
 .reveal.visible {
   opacity: 1;
-  transform: translateY(0); /* REQUIRED so drift animation works */
+  transform: translateY(0);
 }
 
 /* Drift keyframes — crown formation */
@@ -111,20 +111,9 @@ nav a {
   to   { transform: translateY(-340px); }
 }
 
-/* Crown formation */
 .beat.drift1 { animation: driftUp1 2.4s ease forwards; }
 .beat.drift2 { animation: driftUp2 2.6s ease forwards; }
 .beat.drift3 { animation: driftUp3 2.8s ease forwards; }
-
-.beat {
-  font-size: 22px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-}
-
-/* ============================
-   ANCHOR LINE
-   ============================ */
 
 .anchor {
   font-size: 26px;
@@ -137,9 +126,4 @@ nav a {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1.4s ease, transform 1.4s ease;
-}
-
-.anchor.visible {
-  opacity: 1;
-  transform: translateY(0);
 }
