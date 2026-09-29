@@ -99,7 +99,7 @@ nav a {
 
 /* Phase 2: drift upward through the diamond */
 .beat.drift {
-  transform: translateY(-220px); /* adjust if needed */
+  transform: translateY(-320px); /* adjust if needed */
   transition: transform 1.4s ease;
 }
 
