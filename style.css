@@ -98,17 +98,17 @@ nav a {
 /* Drift keyframes — crown formation */
 @keyframes driftUp1 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-180px); }
+  to   { transform: translateY(-360px); }
 }
 
 @keyframes driftUp2 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-240px); }
+  to   { transform: translateY(-350px); }
 }
 
 @keyframes driftUp3 {
   from { transform: translateY(0); }
-  to   { transform: translateY(-300px); }
+  to   { transform: translateY(-340px); }
 }
 
 .beat.drift1 { animation: driftUp1 2.4s ease forwards; }
