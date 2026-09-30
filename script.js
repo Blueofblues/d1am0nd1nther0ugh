@@ -23,11 +23,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1200 + index * 900);
   });
 
-  // Step 3: Anchor appears AFTER crown is fully formed
+  // Step 3: Crown finishes → THEN diamond expands → THEN anchor appears
   const totalRevealTime = 1200 + beats.length * 900;
   const crownFinishTime = totalRevealTime + 1400 + 2800; // drift3 duration
 
+  // ⭐ NEW: Diamond expands FIRST
+  setTimeout(() => {
+    diamond.classList.add("expand");
+  }, crownFinishTime);
+
+  // ⭐ Anchor appears AFTER diamond expansion finishes
   setTimeout(() => {
     anchor.classList.add("visible");
-  }, crownFinishTime);
+  }, crownFinishTime + 1600); // matches diamondExpand duration
 });
