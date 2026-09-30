@@ -110,15 +110,22 @@ nav a {
   from { transform: translateY(0); }
   to   { transform: translateY(-340px); }
 }
+
+/* ⭐ Diamond expands DOWNWARD instead of in-place ⭐ */
+.diamond {
+  transform-origin: top center;   /* THIS is the fix */
+}
+
+/* Diamond expansion animation */
 @keyframes diamondExpand {
   from {
-    transform: scale(1);
+    transform: scale(1) translateY(0);
   }
   60% {
-    transform: scale(1.28); /* overshoot for life */
+    transform: scale(1.28) translateY(20px); /* overshoot + downward push */
   }
   to {
-    transform: scale(1.25); /* settle */
+    transform: scale(1.25) translateY(30px); /* final downward expansion */
   }
 }
 
@@ -126,6 +133,7 @@ nav a {
   animation: diamondExpand 1.6s ease forwards;
 }
 
+/* Crown drift classes */
 .beat.drift1 { animation: driftUp1 2.4s ease forwards; }
 .beat.drift2 { animation: driftUp2 2.6s ease forwards; }
 .beat.drift3 { animation: driftUp3 2.8s ease forwards; }
