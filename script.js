@@ -4,6 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const diamond = document.querySelector(".diamond");
   const beats = document.querySelectorAll(".beat");
   const anchor = document.querySelector(".anchor");
+  const anchorLines = document.querySelectorAll(".anchor-line");
 
   // Step 1: Diamond fade-in
   setTimeout(() => {
@@ -41,8 +42,13 @@ setTimeout(() => {
   diamond.classList.add("expand");
 }, crownFinishTime);
 
-// Anchor appears AFTER diamond expansion finishes
+// Anchor appears after diamond expansion; reveal each sentence in sequence.
 setTimeout(() => {
   anchor.classList.add("visible");
+  anchorLines.forEach((line, index) => {
+    setTimeout(() => {
+      line.classList.add("visible");
+    }, index * 1300);
+  });
 }, crownFinishTime + 1600);
 });
