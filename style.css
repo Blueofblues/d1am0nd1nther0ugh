@@ -63,6 +63,7 @@ nav a {
 
   opacity: 0;
   transform: scale(0.94);
+  transform-origin: top center;   /* ⭐ REQUIRED for downward expansion ⭐ */
   transition: opacity 1.2s ease, transform 1.2s ease;
 }
 
@@ -95,7 +96,10 @@ nav a {
   transform: translateY(0);
 }
 
-/* Drift keyframes — crown formation */
+/* ============================
+   CROWN DRIFT KEYFRAMES
+   ============================ */
+
 @keyframes driftUp1 {
   from { transform: translateY(0); }
   to   { transform: translateY(-345px); }
@@ -111,12 +115,10 @@ nav a {
   to   { transform: translateY(-340px); }
 }
 
-/* ⭐ Diamond expands DOWNWARD instead of in-place ⭐ */
-.diamond {
-  transform-origin: top center;   /* THIS is the fix */
-}
+/* ============================
+   DIAMOND EXPANSION ANIMATION
+   ============================ */
 
-/* Diamond expansion animation */
 @keyframes diamondExpand {
   from {
     transform: scale(1) translateY(0);
