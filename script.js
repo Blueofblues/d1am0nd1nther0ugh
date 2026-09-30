@@ -34,7 +34,7 @@ const driftDuration = 2800;
 
 // Beat 3 finishes drifting at:
 const crownFinishTime =
-  1200 + (beats.length - 1) * (driftPause + driftDuration) + driftPause + driftDuration + 1200;
+  1200 + (beats.length - 1) * (driftPause + driftDuration) + driftPause + driftDuration + 300;
 
 // Diamond expands
 setTimeout(() => {
