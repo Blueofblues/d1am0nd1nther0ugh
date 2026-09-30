@@ -110,6 +110,21 @@ nav a {
   from { transform: translateY(0); }
   to   { transform: translateY(-340px); }
 }
+@keyframes diamondExpand {
+  from {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.28); /* overshoot for life */
+  }
+  to {
+    transform: scale(1.25); /* settle */
+  }
+}
+
+.diamond.expand {
+  animation: diamondExpand 1.6s ease forwards;
+}
 
 .beat.drift1 { animation: driftUp1 2.4s ease forwards; }
 .beat.drift2 { animation: driftUp2 2.6s ease forwards; }
