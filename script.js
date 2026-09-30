@@ -10,10 +10,19 @@ document.addEventListener("DOMContentLoaded", () => {
     diamond.classList.add("visible");
   }, 300);
 
-  // Step 2: Reveal beats one-by-one
-  beats.forEach((beat, index) => {
-    setTimeout(() => {
-      beat.classList.add("visible");
+  // Step 2: Reveal beats one-by-one with a pause before drifting
+beats.forEach((beat, index) => {
+  const revealDelay = 1200 + index * 900;   // keep your reveal timing EXACTLY the same
+  const driftDelay = revealDelay + 1800;    // add a pause before drifting
+
+  setTimeout(() => {
+    beat.classList.add("visible");
+  }, revealDelay);
+
+  setTimeout(() => {
+    beat.classList.add(`drift${index + 1}`);
+  }, driftDelay);
+});
 
       // After reveal → drift upward into crown
       setTimeout(() => {
