@@ -11,38 +11,30 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 300);
 
   // Step 2: Reveal beats one-by-one with a pause before drifting
-beats.forEach((beat, index) => {
-  const revealDelay = 1200 + index * 900;   // keep your reveal timing EXACTLY the same
-  const driftDelay = revealDelay + 1800;    // add a pause before drifting
+  beats.forEach((beat, index) => {
+    const revealDelay = 1200 + index * 900;   // your original reveal timing
+    const driftDelay = revealDelay + 1800;    // pause before drifting
 
-  setTimeout(() => {
-    beat.classList.add("visible");
-  }, revealDelay);
+    setTimeout(() => {
+      beat.classList.add("visible");
+    }, revealDelay);
 
-  setTimeout(() => {
-    beat.classList.add(`drift${index + 1}`);
-  }, driftDelay);
-});
-
-      // After reveal → drift upward into crown
-      setTimeout(() => {
-        beat.classList.add(`drift${index + 1}`);
-      }, 1400);
-
-    }, 1200 + index * 900);
+    setTimeout(() => {
+      beat.classList.add(`drift${index + 1}`);
+    }, driftDelay);
   });
 
   // Step 3: Crown finishes → THEN diamond expands → THEN anchor appears
   const totalRevealTime = 1200 + beats.length * 900;
-  const crownFinishTime = totalRevealTime + 1400 + 2800; // drift3 duration
+  const crownFinishTime = totalRevealTime + 1800 + 2800; // updated drift timing
 
-  // ⭐ NEW: Diamond expands FIRST
+  // Diamond expands
   setTimeout(() => {
     diamond.classList.add("expand");
   }, crownFinishTime);
 
-  // ⭐ Anchor appears AFTER diamond expansion finishes
+  // Anchor appears AFTER diamond expansion finishes
   setTimeout(() => {
     anchor.classList.add("visible");
-  }, crownFinishTime + 1600); // matches diamondExpand duration
+  }, crownFinishTime + 1600);
 });
