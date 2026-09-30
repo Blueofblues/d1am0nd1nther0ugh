@@ -28,13 +28,13 @@ beats.forEach((beat, index) => {
   }, driftDelay);
 });
 
- // Step 3: Crown finishes → THEN diamond expands → THEN anchor appears
+// Step 3: Crown finishes → THEN diamond expands → THEN anchor appears
 const driftPause = 1800;
 const driftDuration = 2800;
 
 // Beat 3 finishes drifting at:
 const crownFinishTime =
-  1200 + (beats.length - 1) * (driftPause + driftDuration) + driftPause + driftDuration;
+  1200 + (beats.length - 1) * (driftPause + driftDuration) + driftPause + driftDuration + 1200;
 
 // Diamond expands
 setTimeout(() => {
