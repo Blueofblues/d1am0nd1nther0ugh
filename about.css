@@ -8,6 +8,7 @@
   --accent: #c56a3d;
   --line: #d9d2c5;
   --max-width: 1120px;
+  --story-copy-size: clamp(1.05rem, 1.5vw, 1.3rem);
 }
 
 * { box-sizing: border-box; }
@@ -58,8 +59,8 @@ a:hover { color: var(--accent); }
 .story-opening {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 270px;
-  gap: clamp(40px, 8vw, 120px);
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: clamp(28px, 4vw, 56px) clamp(40px, 8vw, 120px);
   align-items: center;
   max-width: var(--max-width);
   min-height: 78vh;
@@ -93,19 +94,39 @@ a:hover { color: var(--accent); }
   max-width: 590px;
   margin: 34px 0 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
+  font-size: var(--story-copy-size);
 }
 
-.story-scroll-link {
-  display: inline-block;
-  margin-top: 34px;
-  border-bottom: 1px solid var(--accent);
-  padding-bottom: 5px;
+.story-opening-philosophy {
+  position: relative;
+  z-index: 1;
+  grid-column: 1 / -1;
+  max-width: 590px;
+  margin: 0;
+  text-align: left;
+}
+
+.story-philosophy,
+.story-clarity {
+  font-size: var(--story-copy-size);
+  line-height: 1.7;
+}
+
+.story-philosophy {
+  margin: 0;
+  color: var(--ink);
+  font-weight: 400;
+}
+
+.story-philosophy span { display: block; }
+.story-philosophy-emphasis { margin-top: 0.7em; }
+.story-philosophy strong { font-weight: 700; }
+
+.story-clarity {
+  margin: 14px 0 0;
   color: var(--accent);
-  font-weight: 600;
+  font-weight: 700;
 }
-
-.story-scroll-link span { padding-left: 8px; }
 
 .story-portrait {
   position: relative;
@@ -129,14 +150,15 @@ a:hover { color: var(--accent); }
   text-transform: uppercase;
 }
 
-.story-diamond {
+.story-diamond-art {
   position: absolute;
-  right: 8%;
-  bottom: 5%;
-  width: 210px;
-  height: 210px;
-  border: 1px solid rgba(197, 106, 61, 0.28);
-  transform: rotate(45deg);
+  z-index: 0;
+  right: 0;
+  bottom: 0;
+  width: min(340px, 40vw);
+  height: auto;
+  mix-blend-mode: multiply;
+  pointer-events: none;
 }
 
 .story-chapters {
@@ -171,6 +193,34 @@ a:hover { color: var(--accent); }
 .story-chapter a { color: var(--accent); border-bottom: 1px solid currentColor; }
 .story-chapter em { color: var(--ink); }
 
+.role-list {
+  display: grid;
+  margin: 28px 0 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.role-list li {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr);
+  gap: 5px 18px;
+  border-top: 1px solid var(--line);
+  padding: 18px 0;
+}
+
+.role-date {
+  grid-row: span 2;
+  color: var(--accent);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.role-list strong {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.role-list li > span:last-child { color: var(--muted); }
+
 .story-note {
   margin-top: 34px !important;
   color: var(--ink) !important;
@@ -194,6 +244,38 @@ a:hover { color: var(--accent); }
 }
 
 .education-list span { color: var(--muted); text-align: right; }
+
+.credentials-heading {
+  margin: 42px 0 14px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 1.35rem;
+}
+
+.credential-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.credential-list li {
+  border-left: 2px solid var(--accent);
+  padding-left: 10px;
+}
+
+.skills-summary {
+  border-top: 1px solid var(--line);
+  margin-top: 28px !important;
+  padding-top: 18px;
+}
+
+.skills-summary strong {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--ink);
+}
 
 .story-close {
   position: relative;
@@ -221,11 +303,14 @@ a:hover { color: var(--accent); }
   nav ul { gap: 8px 18px; }
   .story-opening { display: block; min-height: auto; padding: 78px 22px 100px; }
   .story-opening h1 { font-size: clamp(2.7rem, 13vw, 4.2rem); }
-  .story-portrait { width: min(230px, 70vw); margin: 60px auto 0; }
-  .story-diamond { right: -70px; bottom: 30px; width: 160px; height: 160px; }
+  .story-portrait { width: min(300px, 82vw); margin: 60px auto 0; }
+  .story-opening-philosophy { margin: 38px 0 0; padding: 0; }
+  .story-diamond-art { right: -72px; bottom: 28px; width: min(220px, 58vw); }
   .story-chapter { display: block; padding: 72px 22px; }
   .story-chapter-number { margin-bottom: 34px; }
   .story-chapter h2 { font-size: 2.2rem; }
+  .role-list li { grid-template-columns: minmax(0, 1fr); gap: 5px; }
+  .role-date { grid-row: auto; }
   .education-list li { display: block; }
   .education-list span { display: block; margin-top: 4px; text-align: left; }
   .story-close { padding: 90px 22px 110px; }
