@@ -90,6 +90,11 @@ a:hover { color: var(--accent); }
   letter-spacing: -0.03em;
 }
 
+.story-opening h1 {
+  font-size: 3.75rem;
+  letter-spacing: 0;
+}
+
 .story-lede {
   max-width: 590px;
   margin: 34px 0 0;
@@ -154,7 +159,7 @@ a:hover { color: var(--accent); }
   z-index: 0;
   right: 0;
   bottom: 0;
-  width: min(340px, 40vw);
+  width: clamp(360px, 45vw, 580px);
   height: auto;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -297,14 +302,22 @@ a:hover { color: var(--accent); }
 .story-next-steps a { color: var(--accent); font-weight: 600; }
 .story-next-steps span { padding-left: 6px; }
 
+@media (min-width: 701px) and (max-width: 900px) {
+  .story-opening {
+    grid-template-columns: minmax(0, 1fr) 280px;
+    column-gap: 32px;
+  }
+  .story-opening h1 { font-size: 2.75rem; }
+}
+
 @media (max-width: 700px) {
   nav { padding-top: 22px; }
   nav ul { gap: 8px 18px; }
   .story-opening { display: block; min-height: auto; padding: 78px 22px 100px; }
-  .story-opening h1 { font-size: clamp(2.7rem, 13vw, 4.2rem); }
+  .story-opening h1 { font-size: 2.8rem; }
   .story-portrait { width: min(300px, 82vw); margin: 60px auto 0; }
   .story-opening-philosophy { margin: 38px 0 0; padding: 0; }
-  .story-diamond-art { right: -72px; bottom: 28px; width: min(220px, 58vw); }
+  .story-diamond-art { right: -72px; bottom: 28px; width: clamp(180px, 40vw, 280px); }
   .story-chapter { display: block; padding: 72px 22px; }
   .story-chapter-number { margin-bottom: 34px; }
   .story-chapter h2 { font-size: 2.2rem; }
