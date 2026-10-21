@@ -1,1 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Selected ServiceNow and technical troubleshooting work by Jason Miles Triano.">
+	<title>Portfolio — D1AMOND1NTTHEROUGH</title>
+	<link rel="stylesheet" href="portfolio.css">
+	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+	<nav aria-label="Main navigation">
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="resume.html">Resume</a></li>
+			<li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+			<li><a href="Catalog.html">Catalog</a></li>
+			<li><a href="contact.html">Contact</a></li>
+		</ul>
+	</nav>
+
+	<main>
+		<header class="portfolio-opening">
+			<p class="eyebrow">Selected work · ServiceNow · systems</p>
+			<h1>Find the cause.<br><span>Make the fix hold.</span></h1>
+			<p class="opening-copy">A selection of platform investigations and technical fixes: how I traced the signal, tested the cause, and turned it into a practical resolution.</p>
+			<nav class="section-links" aria-label="Portfolio sections">
+				<a href="#featured">Featured case <span aria-hidden="true">01</span></a>
+				<a href="#servicenow">ServiceNow cases <span aria-hidden="true">15</span></a>
+				<a href="#technical">Other technical work <span aria-hidden="true">15</span></a>
+			</nav>
+			<span class="opening-mark" aria-hidden="true">01 / 03</span>
+		</header>
+
+		<section class="project-feature" aria-labelledby="workflow-project-title">
+			<div class="project-feature-copy">
+				<p class="eyebrow">Project spotlight · ServiceNow</p>
+				<h2 id="workflow-project-title">Workflow Fix &amp; Optimization</h2>
+				<p>A catalog request routes Vendor A, Vendor B, and internal staff through distinct onboarding paths, then brings the work together at completion.</p>
+				<a href="Catalog.html">Explore the project <span aria-hidden="true">&#8599;</span></a>
+			</div>
+			<figure class="project-feature-image">
+				<img src="assets/Flow%20Designer%20Example.jpg" alt="ServiceNow flow diagram with vendor and internal staff onboarding paths">
+				<figcaption>One request, tailored setup paths, one coordinated finish.</figcaption>
+			</figure>
+		</section>
+
+		<section class="featured" id="featured" aria-labelledby="featured-title">
+			<div class="section-label"><span>Featured case</span><span>ServiceNow · Incident Management</span></div>
+			<div class="featured-heading">
+				<p class="case-number">01</p>
+				<div>
+					<p class="eyebrow">Access control · query performance</p>
+					<h2 id="featured-title">When valid incidents disappeared from view</h2>
+					<p class="featured-summary">Support users had the right roles, but some expected Incident records were missing from their list views. The investigation traced the behavior to a read ACL condition that was too restrictive.</p>
+				</div>
+			</div>
+
+			<div class="case-grid">
+				<article class="case-step">
+					<p class="step-label">01 <span>Investigate</span></p>
+					<h3>Reproduce the gap</h3>
+					<ul>
+						<li>Impersonated affected users to reproduce the missing records.</li>
+						<li>Used Debug Security Rules to trace ACL evaluations.</li>
+						<li>Found a failing Incident read ACL that depended on a field that was inconsistently populated and not indexed.</li>
+					</ul>
+				</article>
+				<article class="case-step">
+					<p class="step-label">02 <span>Collaborate</span></p>
+					<h3>Use AI as a second set of eyes</h3>
+					<ul>
+						<li>Used Copilot to summarize the ACL evaluation stack and review the script for logic pitfalls.</li>
+						<li>AI surfaced the non-indexed field as a potential source of inconsistent behavior under load.</li>
+						<li>Manually checked each suggestion against the platform behavior before making changes.</li>
+					</ul>
+				</article>
+				<article class="case-step">
+					<p class="step-label">03 <span>Resolve</span></p>
+					<h3>Make visibility predictable</h3>
+					<ul>
+						<li>Refactored the ACL to use a reliable, indexed field.</li>
+						<li>Added a safe fallback condition and documented the ACL logic.</li>
+						<li>Validated with impersonation tests across roles; record visibility returned in list and related views, with improved query performance.</li>
+					</ul>
+				</article>
+			</div>
+
+			<aside class="evidence-note">
+				<div>
+					<p class="eyebrow">Evidence to add</p>
+					<h3>Show the work, safely.</h3>
+					<p>Artifacts are not attached yet. Any future examples should be sanitized to remove organization, user, and system-sensitive information.</p>
+				</div>
+				<ul>
+					<li>Sanitized ACL rule and corrected script excerpt</li>
+					<li>Debug Security Rules view showing the passing ACL</li>
+					<li>Before-and-after list visibility comparison</li>
+					<li>Simple ACL evaluation flow diagram</li>
+				</ul>
+			</aside>
+		</section>
+
+		<section class="work-section" id="servicenow" aria-labelledby="servicenow-title">
+			<header class="work-heading">
+				<p class="eyebrow">Platform troubleshooting · 15 examples</p>
+				<h2 id="servicenow-title">ServiceNow, from rule to result.</h2>
+				<p>Investigations across access, automation, discovery, service delivery, and reporting. Open a case for the problem, how it was identified, and the resolution.</p>
+			</header>
+
+			<div class="case-list">
+				<details class="work-item">
+					<summary><span class="item-number">01</span><span class="item-title">Query ACL blocking record visibility</span><span class="item-category">Security</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Users could not see expected records despite having the right roles.</p><p><strong>Identification</strong> Impersonation and ACL logs exposed a failing read ACL with a condition referencing a non-indexed field.</p><p><strong>Resolution</strong> Refactored the ACL to use an indexed field, added a safe server-side filter, and validated visibility with impersonation tests.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">02</span><span class="item-title">Business Rule creating duplicate child records</span><span class="item-category">Automation</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> A synchronous Business Rule created duplicate child records under high concurrency.</p><p><strong>Identification</strong> Execution order and system logs revealed a race-condition pattern.</p><p><strong>Resolution</strong> Added an existing-record guard, moved safe logic to an async rule, and applied transaction-safe GlideRecord patterns.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">03</span><span class="item-title">SLA not reapplying after priority change</span><span class="item-category">Service delivery</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> SLA timers did not restart when Incident priority changed, producing incorrect breach calculations.</p><p><strong>Identification</strong> Mapped the Priority-to-SLA matrix, audited definitions, and tested priority transitions in development.</p><p><strong>Resolution</strong> Updated SLA conditions, added a Business Rule to reapply SLAs on priority change, and validated all priority permutations.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">04</span><span class="item-title">Adobe Acrobat discovery duplicating SAM CIs</span><span class="item-category">Discovery · SAM</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Discovery created duplicate Acrobat CIs, disrupting SAM license counts.</p><p><strong>Identification</strong> MID logs, discovery patterns, and normalization rules showed inconsistent product naming.</p><p><strong>Resolution</strong> Updated Software Recognition rules, added a normalization regex and reconciliation key, then validated with targeted discovery.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">05</span><span class="item-title">MID Server AMB disconnects and probe failures</span><span class="item-category">Infrastructure</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Intermittent Agent Message Bus disconnects caused probe failures.</p><p><strong>Identification</strong> Reviewed MID logs and AMB traces; investigated MTU, Java memory, and certificate issues.</p><p><strong>Resolution</strong> Adjusted JVM memory, rotated certificates, corrected firewall rules, and added monitoring for disconnect patterns.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">06</span><span class="item-title">Catalog Item workflow not triggering</span><span class="item-category">Flow Designer</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> A Catalog Item submission did not start its workflow.</p><p><strong>Identification</strong> Flow Designer logs revealed a missing trigger condition and a broken reference field.</p><p><strong>Resolution</strong> Repaired the reference mapping, corrected the trigger condition, and validated with test submissions.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">07</span><span class="item-title">UI Policy conflicts hiding fields</span><span class="item-category">User experience</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Overlapping UI Policies made fields unexpectedly hidden or read-only.</p><p><strong>Identification</strong> Policy diagnostics and condition reviews exposed conflicting reverse actions.</p><p><strong>Resolution</strong> Consolidated policies, removed redundant conditions, and introduced a single master policy with clear logic.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">08</span><span class="item-title">Transform Map creating incorrect CMDB relationships</span><span class="item-category">CMDB</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Import sets created incorrect CI relationships because of a faulty Transform Map script.</p><p><strong>Identification</strong> Import logs and relationship records led to an incorrect parent lookup.</p><p><strong>Resolution</strong> Rewrote the script to use stable identifiers, added validation, and reran the import.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">09</span><span class="item-title">Performance Analytics showing incorrect data</span><span class="item-category">Analytics</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Dashboards showed outdated or inconsistent metrics.</p><p><strong>Identification</strong> Indicator sources, breakdowns, and schedules pointed to a misconfigured data collector.</p><p><strong>Resolution</strong> Corrected indicator sources and breakdown mappings, then rescheduled collectors.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">10</span><span class="item-title">Incident auto-assignment not triggering</span><span class="item-category">Service delivery</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Incidents were not routing to assignment groups automatically.</p><p><strong>Identification</strong> Assignment Rule and group criteria reviews exposed a missing field dependency.</p><p><strong>Resolution</strong> Updated rule conditions, added a fallback rule, and validated with impersonation and test incidents.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">11</span><span class="item-title">Email notifications not sending</span><span class="item-category">Notifications</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Approval and update notifications did not reach users.</p><p><strong>Identification</strong> Notification logs showed a malformed condition and an inactive event.</p><p><strong>Resolution</strong> Repaired the condition, reactivated the event, and tested with sample records.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">12</span><span class="item-title">Flow Designer loop slowing the system</span><span class="item-category">Flow Designer</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> A Flow Designer loop repeatedly triggered itself and degraded performance.</p><p><strong>Identification</strong> Execution logs revealed a recursive condition.</p><p><strong>Resolution</strong> Added guard conditions, stopped the recursion, and optimized the flow path.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">13</span><span class="item-title">Reference qualifier returning empty lists</span><span class="item-category">Forms</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> A reference field offered no selectable options.</p><p><strong>Identification</strong> Qualifier debugging found a GlideRecord query referencing a null variable.</p><p><strong>Resolution</strong> Corrected the variable reference, added null checks, and validated on form load.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">14</span><span class="item-title">Change request stuck awaiting approval</span><span class="item-category">Change management</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> Change requests stalled because an approval script failed silently.</p><p><strong>Identification</strong> Workflow context showed a script action throwing an unlogged error.</p><p><strong>Resolution</strong> Rewrote the approval script, added logging, and tested multiple approval paths.</p></div>
+				</details>
+				<details class="work-item">
+					<summary><span class="item-number">15</span><span class="item-title">Discovery pattern missing a custom application</span><span class="item-category">Discovery · CMDB</span></summary>
+					<div class="item-body"><p><strong>Problem</strong> A custom application was not discovered, leaving gaps in the CMDB.</p><p><strong>Identification</strong> Pattern-step review found missing process signatures.</p><p><strong>Resolution</strong> Added custom signatures, updated pattern logic, and validated with targeted discovery.</p></div>
+				</details>
+			</div>
+		</section>
+
+		<section class="work-section technical-section" id="technical" aria-labelledby="technical-title">
+			<header class="work-heading">
+				<p class="eyebrow">Beyond the platform · 15 examples</p>
+				<h2 id="technical-title">A good diagnosis travels.</h2>
+				<p>Additional examples across web applications, scripting, data, and infrastructure. Expand any entry to see the investigation and fix.</p>
+			</header>
+			<div class="case-list">
+				<details class="work-item"><summary><span class="item-number">01</span><span class="item-title">Flask application failing to bind to host</span><span class="item-category">Python · web</span></summary><div class="item-body"><p><strong>Problem</strong> The app accepted connections only on localhost.</p><p><strong>Identification</strong> Checked the run command, firewall rules, and host binding.</p><p><strong>Resolution</strong> Set the host binding to <code>0.0.0.0</code>, corrected firewall rules, and validated external access.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">02</span><span class="item-title">GlideAjax returning empty data</span><span class="item-category">ServiceNow · JavaScript</span></summary><div class="item-body"><p><strong>Problem</strong> A GlideAjax call returned no data although the Script Include worked server-side.</p><p><strong>Identification</strong> Checked client-callable configuration, class name, and AJAX payload.</p><p><strong>Resolution</strong> Enabled client calling, corrected the class-name mismatch, and verified the response in browser developer tools.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">03</span><span class="item-title">Legacy SQL Server query compatibility</span><span class="item-category">SQL</span></summary><div class="item-body"><p><strong>Problem</strong> A SQL Server 6.5-era query failed on a modern engine because it used deprecated syntax.</p><p><strong>Identification</strong> Reviewed the query syntax and database compatibility mode.</p><p><strong>Resolution</strong> Rewrote the query with ANSI joins and enabled the required compatibility mode.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">04</span><span class="item-title">Python model exhausting available memory</span><span class="item-category">Python · AI</span></summary><div class="item-body"><p><strong>Problem</strong> A custom model crashed during training due to memory exhaustion.</p><p><strong>Identification</strong> Reviewed batch size, model architecture, and GPU/CPU memory use.</p><p><strong>Resolution</strong> Reduced batch size, optimized data loading, and applied gradient checkpointing.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">05</span><span class="item-title">Flask application blocked by CORS</span><span class="item-category">Python · web</span></summary><div class="item-body"><p><strong>Problem</strong> Browser requests were blocked because the expected CORS headers were missing.</p><p><strong>Identification</strong> Network logs confirmed the missing <code>Access-Control-Allow-Origin</code> header.</p><p><strong>Resolution</strong> Added Flask-CORS middleware and configured allowed origins.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">06</span><span class="item-title">JavaScript event listener not firing</span><span class="item-category">JavaScript</span></summary><div class="item-body"><p><strong>Problem</strong> A button click did not trigger its expected action.</p><p><strong>Identification</strong> Checked DOM load timing, element IDs, and script placement.</p><p><strong>Resolution</strong> Corrected the element ID, moved the script to the page end, and initialized the listener after DOM content loaded.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">07</span><span class="item-title">PowerShell script blocked by execution policy</span><span class="item-category">PowerShell</span></summary><div class="item-body"><p><strong>Problem</strong> A PowerShell automation script would not run under the configured execution policy.</p><p><strong>Identification</strong> Checked the active policy and confirmed it was Restricted.</p><p><strong>Resolution</strong> Applied an approved RemoteSigned policy and signed the script.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">08</span><span class="item-title">Flask application crashing from circular imports</span><span class="item-category">Python</span></summary><div class="item-body"><p><strong>Problem</strong> The app crashed at startup due to circular imports between modules.</p><p><strong>Identification</strong> Traced import paths and found mutual dependencies.</p><p><strong>Resolution</strong> Moved shared logic into a separate module and removed circular references.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">09</span><span class="item-title">Responsive layout breaking on mobile</span><span class="item-category">Web · CSS</span></summary><div class="item-body"><p><strong>Problem</strong> A responsive layout collapsed incorrectly on mobile screens.</p><p><strong>Identification</strong> Reviewed the viewport meta tag, media queries, and flexbox rules.</p><p><strong>Resolution</strong> Added the viewport meta tag, corrected flex direction, and adjusted breakpoints.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">10</span><span class="item-title">GitHub Pages deployment missing build files</span><span class="item-category">Git · deployment</span></summary><div class="item-body"><p><strong>Problem</strong> A GitHub Pages deployment failed because build artifacts were missing.</p><p><strong>Identification</strong> Build logs showed the expected <code>/dist</code> folder was absent.</p><p><strong>Resolution</strong> Updated the build pipeline and output directory, then redeployed.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">11</span><span class="item-title">Flask function outside application context</span><span class="item-category">Python</span></summary><div class="item-body"><p><strong>Problem</strong> A Flask function accessed <code>current_app</code> without an active application context.</p><p><strong>Identification</strong> Traced the call stack to logic running before application initialization.</p><p><strong>Resolution</strong> Used the application context for the operation and moved initialization to the correct point.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">12</span><span class="item-title">Fetch API returning 404 for a valid endpoint</span><span class="item-category">JavaScript · API</span></summary><div class="item-body"><p><strong>Problem</strong> Fetch requests returned 404 even though the endpoint worked in Postman.</p><p><strong>Identification</strong> Checked request paths, base URLs, and relative versus absolute routing.</p><p><strong>Resolution</strong> Corrected the Fetch URL to use the full endpoint and validated it in browser developer tools.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">13</span><span class="item-title">Python virtual environment not activating</span><span class="item-category">Python · environment</span></summary><div class="item-body"><p><strong>Problem</strong> The virtual environment would not activate due to shell configuration.</p><p><strong>Identification</strong> Checked shell type, PATH, and activation script location.</p><p><strong>Resolution</strong> Updated the shell profile, corrected PATH, and activated the environment.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">14</span><span class="item-title">Git merge conflicts in generated files</span><span class="item-category">Git · workflow</span></summary><div class="item-body"><p><strong>Problem</strong> Auto-generated files repeatedly caused merge conflicts.</p><p><strong>Identification</strong> Reviewed repository attributes and found no rules for generated content.</p><p><strong>Resolution</strong> Added appropriate merge strategies so generated files could be ignored or regenerated.</p></div></details>
+				<details class="work-item"><summary><span class="item-number">15</span><span class="item-title">Flask application not loading environment variables</span><span class="item-category">Python · configuration</span></summary><div class="item-body"><p><strong>Problem</strong> The application did not read its expected environment variables.</p><p><strong>Identification</strong> Checked the <code>.env</code> location, dotenv initialization, and operating-system environment.</p><p><strong>Resolution</strong> Initialized <code>load_dotenv()</code> at startup and verified variable loading.</p></div></details>
+			</div>
+		</section>
+
+		<footer class="portfolio-close">
+			<p class="eyebrow">Keep the conversation going</p>
+			<h2>Have a problem worth untangling?</h2>
+			<a class="contact-link" href="contact.html">Get in touch <span aria-hidden="true">↗</span></a>
+		</footer>
+	</main>
+</body>
+</html>
 
